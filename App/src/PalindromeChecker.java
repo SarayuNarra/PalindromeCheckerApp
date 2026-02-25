@@ -1,22 +1,18 @@
 public class PalindromeChecker {
     public static void main(String[] args){
-        String str = "Race Car";
+        String original = "madam";
+        String reversed = "";
 
-        str = str.replaceAll("\\s+", "").toLowerCase();
-
-        boolean isPalindrome = true;
-
-        for (int i = 0; i < str.length() / 2; i++) {
-            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        // Reverse the string using loop
+        for (int i = original.length() - 1; i >= 0; i--) {
+            reversed = reversed + original.charAt(i);
         }
 
-        if (isPalindrome) {
-            System.out.println("Palindrome");
+        // Compare original and reversed string
+        if (original.equals(reversed)) {
+            System.out.println(original + " is a Palindrome");
         } else {
-            System.out.println("Not Palindrome");
+            System.out.println(original + " is NOT a Palindrome");
         }
     }
 }
